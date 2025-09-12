@@ -22,7 +22,7 @@
           <h6 className="text-black uppercase text-4xl md:text-6xl mt-6 md:px-[10pc] font-semibold">
             yx1 wireless earphones
           </h6>
-          <p className="opacity-50 mt-11 md:px-5 lg:px-13 text-xl">
+          <p className="opacity-50 mt-11 md:px-5 lg:px-14 text-xl">
               Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. 
               Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.
           </p>
