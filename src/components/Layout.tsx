@@ -1,0 +1,20 @@
+import { Outlet } from "react-router-dom";
+import Header from "./Header";
+import Footer from "./Footer";
+
+export default function Layout() {
+  return (
+    <div className="flex flex-col min-h-screen">
+      {/* Global Header */}
+      <Header />
+
+      {/* Main Page Content */}
+      <main className="flex-grow">
+        <Outlet />
+      </main>
+
+      {/* Global Footer */}
+      <Footer />
+    </div>
+  );
+}

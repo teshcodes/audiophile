@@ -1,29 +1,16 @@
-import { Menu, ShoppingCart } from "lucide-react";
-import SecondHeader from "./SecondHeader";
-import ShopArea from "./ShopArea";
-import ShopBanner from "./ShopBanner";
-import ZX7Banner from "./ZX7Banner";
+ import { ShoppingCart } from "lucide-react";
 
 export default function Header() {
   return (
-    <div className="">
-      <header className="bg-black text-white">
-        <nav className="flex items-center mx-auto h-[50px] px-6 py-6 sm:max-w-[689px] lg:max-w-[1110px] border-b border-gray-400/20 pb-6">
-          {/* Menu + Logo grouped together */}
-          <div className="flex items-center gap-10">
-            <Menu className="w-4 h-4 cursor-pointer" />
-            <h1 className="text-lg font-bold tracking-widest">audiophile</h1>
-          </div>
+    <header className="flex  bg-black text-white p-6 justify-between items-center py-10">
+      {/* Logo */}
+      <h1 className="text-2xl font-bold tracking-wide">
+        audioPhile
+      </h1>
 
-          {/* Cart Icon aligned right */}
-          <ShoppingCart className="w-4 h-4 cursor-pointer ml-auto" />
-        </nav>
-      </header>
-
-      <SecondHeader />
-      <ShopArea />
-      <ShopBanner />
-      <ZX7Banner />
-    </div>
+      <button className="relative">
+        <ShoppingCart size={28} />
+      </button>
+    </header>
   );
 }
