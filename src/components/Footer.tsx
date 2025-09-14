@@ -3,11 +3,12 @@ import { Facebook, Instagram, Twitter } from "lucide-react";
 export default function Footer() {
   return (
     <section className="mt-8 py-14 px-6 sm:px-13 bg-black text-center sm:text-left">
+      <div className="lg:flex justify-between">
       {/* Logo */}
       <h2 className="text-white font-bold text-4xl">audiophile</h2>
 
       {/* Nav links */}
-      <div className="text-white mt-10">
+      <div className="text-white mt-10 lg:mt-0">
         <nav
           className="
             flex flex-col items-center gap-4
@@ -28,6 +29,7 @@ export default function Footer() {
             Earphones
           </a>
         </nav>
+      </div>
       </div>
 
       {/* About text */}
@@ -55,7 +57,7 @@ export default function Footer() {
         <h2>Copyright 2025. All Rights Reserved</h2>
 
         {/* Social icons */}
-        <div className="flex gap-6 justify-center mt-10 md:mt-0">
+        <div className="flex gap-6 justify-center mt-10 md:mt-0 lg:mt-[-10pc]">
           <a
             href="https://facebook.com"
             target="_blank"
