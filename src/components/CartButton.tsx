@@ -43,7 +43,7 @@ export default function CartButton() {
             fixed md:absolute right-0 mt-20 
             inset-0 md:inset-auto 
             md:right-0 md:mt-4 
-            w-[72] md:w-96 
+            w-[72%] md:w-96 
             mx-4 md:mx-0 
             bg-white text-black 
             shadow-lg rounded md:rounded-lg 
