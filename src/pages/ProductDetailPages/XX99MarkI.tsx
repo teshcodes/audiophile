@@ -1,9 +1,32 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import ShopArea from "../../components/ShopArea";
+import  { CartContext } from "../../context/CartContext";
+import { products } from "../../data/product";
 
 export default function XX99MarkI() {
   const [count, setCount] = useState(1);
   const navigate = useNavigate();
+
+  const cart = useContext(CartContext);
+    if (!cart) {
+      throw new Error("Please Add to cart");
+    }
+    const { dispatch } = cart;
+    const product = products.xx99MarkI;
+
+    const handleAddToCart = () => {
+    dispatch({
+      type: "ADD_ITEM",
+      payload: {
+        id: product.id,
+        name: product.name,
+        price: product.price,
+        image: "/headset.png",
+        quantity: count,
+      },
+    });  
+  };
 
   const increment = () => setCount(count + 1);
   const decrement = () => {
@@ -28,7 +51,7 @@ export default function XX99MarkI() {
         <div className="w-full md:w-1/2 flex justify-center rounded-lg overflow-hidden bg-[#F1F1F1] h-[400px] lg:ml-[2pc]">
           <img
             src="/headset.png"
-            alt="XX99 Mark I Headphones"
+            alt={product.name}
             className="w-[250px] h-auto object-contain"
           />
         </div>
@@ -39,14 +62,14 @@ export default function XX99MarkI() {
             New Product
           </h5>
           <h6 className="text-black uppercase text-4xl md:text-3xl mb-6 font-semibold">
-            XX99 Mark I Headphones
+            {product.name}
           </h6>
           <p className="opacity-50 mb-6 text-xl">
             As the gold standard for headphones, the classic XX99 Mark I offers
             detailed and accurate audio reproduction for audiophiles, mixing
             engineers, and music aficionados alike in studios and on the go.
           </p>
-          <p className="font-bold text-2xl mb-6">$1,750</p>
+          <p className="font-bold text-2xl mb-6">${product.price}</p>
 
           {/* Counter + Add to Cart */}
           <div className="flex flex-row sm:flex-col lg:flex-row md:flex-row items-center sm:items-start lg:items-center gap-4">
@@ -68,7 +91,9 @@ export default function XX99MarkI() {
             </div>
 
             {/* Add to Cart */}
-            <button className="uppercase py-2 px-6 text-white bg-[#D87D4A] hover:bg-amber-400 transition">
+            <button 
+            onClick ={handleAddToCart}
+            className="uppercase py-2 px-6 text-white bg-[#D87D4A] hover:bg-amber-400 transition">
               Add to Cart
             </button>
           </div>
@@ -206,7 +231,7 @@ export default function XX99MarkI() {
             </div>
             <h3 className="uppercase font-bold text-xl my-6">ZX9 Speaker</h3>
             <button
-               onClick={() => navigate("/speakers/zx9-speaker")}
+               onClick={() => navigate("/speakers/zx9Speaker")}
               className="uppercase py-2 px-6 text-white bg-[#D87D4A] hover:bg-amber-400 transition"
             >
               See Product
@@ -214,6 +239,8 @@ export default function XX99MarkI() {
           </div>
         </div>
       </div>
+
+      <ShopArea className="mt-[11pc] mb-[8pc]" />
 
       {/* Audio Gear Section */}
       <div className="mt-32 py-20 px-6 md:px-12 lg:px-24 rounded-lg">

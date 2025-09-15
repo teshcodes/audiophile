@@ -1,8 +1,10 @@
 import { Facebook, Instagram, Twitter } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
+
   return (
-    <section className="mt-8 py-14 px-6 sm:px-13 bg-black text-center sm:text-left">
+    <footer className="mt-8 py-14 px-6 sm:px-13 bg-black text-center sm:text-left">
       <div className="lg:flex justify-between">
       {/* Logo */}
       <h2 className="text-white font-bold text-4xl">audiophile</h2>
@@ -16,18 +18,18 @@ export default function Footer() {
             uppercase text-sm tracking-[2px]
           "
         >
-          <a href="#" className="hover:text-amber-500">
+          <Link to="/" className="hover:text-amber-500">
             Home
-          </a>
-          <a href="#" className="hover:text-amber-500">
+          </Link>
+          <Link to="/headphones" className="hover:text-amber-500">
             Headphones
-          </a>
-          <a href="#" className="hover:text-amber-500">
+          </Link>
+          <Link to="/speakers" className="hover:text-amber-500">
             Speakers
-          </a>
-          <a href="#" className="hover:text-amber-500">
+          </Link>
+          <Link to="/earphones" className="hover:text-amber-500">
             Earphones
-          </a>
+          </Link>
         </nav>
       </div>
       </div>
@@ -81,6 +83,6 @@ export default function Footer() {
           </a>
         </div>
       </div>
-    </section>
+    </footer>
   );
 }

@@ -1,14 +1,39 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import ShopArea from "../../components/ShopArea";
+import { CartContext } from "../../context/CartContext";
+import { products } from "../../data/product";
 
 export default function XX59() {
   const [count, setCount] = useState(1);
   const navigate = useNavigate();
 
+  const cart = useContext(CartContext);
+  if (!cart) {
+    throw new Error("Please Add to cart");
+  }
+
+  const { dispatch } = cart;
+  const product = products.xx59;
+
+  const handleAddToCart = () => {
+    dispatch({
+      type: "ADD_ITEM",
+      payload: {
+        id: product.id,
+        name: product.name,
+        price: product.price,
+        image: "/xx59-headphones.png",
+        quantity: count,
+      },
+    });  
+  };
+
   const increment = () => setCount(count + 1);
   const decrement = () => {
     if (count > 1) setCount(count - 1);
   };
+
 
   return (
     <div className="w-full overflow-x-hidden my-10">
@@ -28,7 +53,7 @@ export default function XX59() {
         <div className="w-full md:w-1/2 flex justify-center rounded-lg overflow-hidden bg-[#F1F1F1] h-[400px] lg:ml-[2pc]">
           <img
             src="/xx59-headphones.png"
-            alt="XX59 Headphones"
+            alt={product.name}
             className="w-[250px] h-auto object-contain"
           />
         </div>
@@ -39,13 +64,14 @@ export default function XX59() {
             New Product
           </h5>
           <h6 className="text-black uppercase text-4xl md:text-3xl mb-6 font-semibold">
-            XX59 Headphones
+            {product.name}
           </h6>
           <p className="opacity-50 mb-6 text-xl">
-            Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. 
-            The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.
+            Enjoy your audio almost anywhere and customize it to your specific
+            tastes with the XX59 headphones. The stylish yet durable versatile
+            wireless headset is a brilliant companion at home or on the move.
           </p>
-          <p className="font-bold text-2xl mb-6">$899</p>
+          <p className="font-bold text-2xl mb-6">${product.price}</p>
 
           {/* Counter + Add to Cart */}
           <div className="flex flex-row sm:flex-col lg:flex-row md:flex-row items-center sm:items-start lg:items-center gap-4">
@@ -67,7 +93,10 @@ export default function XX59() {
             </div>
 
             {/* Add to Cart */}
-            <button className="uppercase py-2 px-6 text-white bg-[#D87D4A] hover:bg-amber-400 transition">
+            <button
+              onClick= {handleAddToCart}
+              className="uppercase py-2 px-6 text-white bg-[#D87D4A] hover:bg-amber-400 transition"
+            >
               Add to Cart
             </button>
           </div>
@@ -80,15 +109,20 @@ export default function XX59() {
         <div className="md:w-2/3">
           <h2 className="uppercase font-bold text-2xl mb-6">Features</h2>
           <p className="opacity-70 mb-4">
-            These headphones have been created from durable, high-quality materials tough enough to take anywhere. 
-            Its compact folding design fuses comfort and minimalist style making it perfect for travel. Flawless 
-            transmission is assured by the latest wireless technology engineered for audio synchronization with videos.
+            These headphones have been created from durable, high-quality
+            materials tough enough to take anywhere. Its compact folding design
+            fuses comfort and minimalist style making it perfect for travel.
+            Flawless transmission is assured by the latest wireless technology
+            engineered for audio synchronization with videos.
           </p>
           <p className="opacity-70">
-            More than a simple pair of headphones, this headset features a pair of built-in microphones for clear, 
-            hands-free calling when paired with a compatible smartphone. Controlling music and calls is also intuitive 
-            thanks to easy-access touch buttons on the earcups. Regardless of how you use the XX59 headphones, 
-            you can do so all day thanks to an impressive 30-hour battery life that can be rapidly recharged via USB-C.
+            More than a simple pair of headphones, this headset features a pair
+            of built-in microphones for clear, hands-free calling when paired
+            with a compatible smartphone. Controlling music and calls is also
+            intuitive thanks to easy-access touch buttons on the earcups.
+            Regardless of how you use the XX59 headphones, you can do so all day
+            thanks to an impressive 30-hour battery life that can be rapidly
+            recharged via USB-C.
           </p>
         </div>
 
@@ -150,7 +184,9 @@ export default function XX59() {
 
       {/* You May Also Like */}
       <div className="lg:mt-[40pc] md:mt-[25pc] mt-20 text-center">
-        <h1 className="uppercase font-bold text-3xl mb-12">You may also like</h1>
+        <h1 className="uppercase font-bold text-3xl mb-12">
+          You may also like
+        </h1>
 
         <div className="flex flex-col md:flex-row md:justify-center md:gap-3 gap-12">
           {/* Suggestion 1: Mark II */}
@@ -164,25 +200,25 @@ export default function XX59() {
             </div>
             <h3 className="uppercase font-bold text-xl my-6">XX99 Mark II</h3>
             <button
-            onClick={() => navigate("/headphones/xx99-mark-ii")}
+              onClick={() => navigate("/headphones/xx99-mark-ii")}
               className="uppercase py-2 px-6 text-white bg-[#D87D4A] hover:bg-amber-400 transition"
             >
               See Product
             </button>
           </div>
 
-          {/* Suggestion 2: XX59 */}
+          {/* Suggestion 2: Mark I */}
           <div className="flex flex-col items-center">
             <div className="relative rounded-lg overflow-hidden w-full md:w-[200px] lg:w-[300px] h-[300px] bg-[#F1F1F1] flex items-center justify-center">
               <img
-                src="/xx59-headphones.png"
-                alt="XX59 Headphones"
+                src="/headset.png"
+                alt="XX99 Mark I"
                 className="w-[150px] h-auto object-contain"
               />
             </div>
-            <h3 className="uppercase font-bold text-xl my-6">XX59</h3>
+            <h3 className="uppercase font-bold text-xl my-6">XX99 mark i</h3>
             <button
-              onClick={() => navigate("/headphones/xx59")}
+              onClick={() => navigate("/headphones/xx99-mark-i")}
               className="uppercase py-2 px-6 text-white bg-[#D87D4A] hover:bg-amber-400 transition"
             >
               See Product
@@ -199,15 +235,16 @@ export default function XX59() {
               />
             </div>
             <h3 className="uppercase font-bold text-xl my-6">ZX9 Speaker</h3>
-            <button
-               
-              className="uppercase py-2 px-6 text-white bg-[#D87D4A] hover:bg-amber-400 transition"
-            >
+            <button 
+            onClick={() => navigate("/speakers/zx9Speaker")}
+            className="uppercase py-2 px-6 text-white bg-[#D87D4A] hover:bg-amber-400 transition">
               See Product
             </button>
           </div>
         </div>
       </div>
+
+      <ShopArea className="mt-[11pc] mb-[8pc]" />
 
       {/* Audio Gear Section */}
       <div className="mt-32 py-20 px-6 md:px-12 lg:px-24 rounded-lg">

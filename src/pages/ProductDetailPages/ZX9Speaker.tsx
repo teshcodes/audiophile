@@ -1,5 +1,8 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import ShopArea from "../../components/ShopArea";
+import { CartContext } from "../../context/CartContext";
+import {products} from "../../data/product";
 
 export default function ZX9Speaker() {
   const [count, setCount] = useState(1);
@@ -8,6 +11,26 @@ export default function ZX9Speaker() {
   const increment = () => setCount(count + 1);
   const decrement = () => {
     if (count > 1) setCount(count - 1);
+  };
+
+  const cart = useContext(CartContext);
+  if (!cart) {
+    throw new Error("Please Add to cart");
+  }
+  const { dispatch } = cart;
+  const product = products.zx9;
+
+  const handleAddToCart = () => {
+    dispatch({
+      type: "ADD_ITEM",
+      payload: {
+        id: product.id,
+        name: product.name,
+        price: product.price,
+        image: "/speaker.png",
+        quantity: count,
+      },
+    });  
   };
 
   return (
@@ -26,7 +49,7 @@ export default function ZX9Speaker() {
         <div className="w-full md:w-1/2 flex justify-center rounded-lg overflow-hidden bg-[#F1F1F1] h-[400px] lg:ml-[2pc]">
           <img
             src="/speaker.png"
-            alt="ZX9 Speaker"
+            alt={product.name}
             className="w-[250px] h-auto object-contain"
           />
         </div>
@@ -37,14 +60,15 @@ export default function ZX9Speaker() {
             New Product
           </h5>
           <h6 className="text-black uppercase text-4xl md:text-3xl mb-6 font-semibold">
-            ZX9 Speaker
+            {product.name}
           </h6>
           <p className="opacity-50 mb-6 text-xl">
-            Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf 
-            speaker system that offers truly wireless connectivity -- creating new 
-            possibilities for more pleasing and practical audio setups.
+            Upgrade your sound system with the all new ZX9 active speaker. It’s
+            a bookshelf speaker system that offers truly wireless connectivity
+            -- creating new possibilities for more pleasing and practical audio
+            setups.
           </p>
-          <p className="font-bold text-2xl mb-6">$4,500</p>
+          <p className="font-bold text-2xl mb-6">${product.price}</p>
 
           {/* Counter + Add to Cart */}
           <div className="flex flex-row sm:flex-col lg:flex-row md:flex-row items-center sm:items-start lg:items-center gap-4">
@@ -66,7 +90,10 @@ export default function ZX9Speaker() {
             </div>
 
             {/* Add to Cart */}
-            <button className="uppercase py-2 px-6 text-white bg-[#D87D4A] hover:bg-amber-400 transition">
+            <button
+              onClick= {handleAddToCart}
+              className="uppercase py-2 px-6 text-white bg-[#D87D4A] hover:bg-amber-400 transition"
+            >
               Add to Cart
             </button>
           </div>
@@ -79,18 +106,20 @@ export default function ZX9Speaker() {
         <div className="md:w-2/3">
           <h2 className="uppercase font-bold text-2xl mb-6">Features</h2>
           <p className="opacity-70 mb-4">
-            Connect via Bluetooth or nearly any wired source. This speaker features optical, 
-            digital coaxial, USB Type-B, stereo RCA, and stereo XLR inputs, allowing you to 
-            have up to five wired source devices connected for easy switching. Improved 
-            bluetooth technology offers near lossless audio quality at up to 328ft (100m).
+            Connect via Bluetooth or nearly any wired source. This speaker
+            features optical, digital coaxial, USB Type-B, stereo RCA, and
+            stereo XLR inputs, allowing you to have up to five wired source
+            devices connected for easy switching. Improved bluetooth technology
+            offers near lossless audio quality at up to 328ft (100m).
           </p>
           <p className="opacity-70">
-            Discover clear, more natural sounding highs than the competition with ZX9’s 
-            signature planar diaphragm tweeter. Equally important is its powerful 
-            room-shaking bass courtesy of a 6.5” aluminum alloy bass unit. 
-            You’ll be able to enjoy equal sound quality whether in a large room or small den. 
-            Furthermore, you will experience new sensations from old songs since it can respond 
-            to even the subtle waveforms.
+            Discover clear, more natural sounding highs than the competition
+            with ZX9’s signature planar diaphragm tweeter. Equally important is
+            its powerful room-shaking bass courtesy of a 6.5” aluminum alloy
+            bass unit. You’ll be able to enjoy equal sound quality whether in a
+            large room or small den. Furthermore, you will experience new
+            sensations from old songs since it can respond to even the subtle
+            waveforms.
           </p>
         </div>
 
@@ -154,7 +183,7 @@ export default function ZX9Speaker() {
         </div>
       </div>
 
-      <div className="lg:mt-[30pc] md:mt-[15pc] mt-20 text-center">
+      <div className="lg:mt-[63pc] md:mt-[34pc] mt-20 text-center">
         {/* Heading */}
         <h1 className="uppercase font-bold text-3xl mb-12">
           You may also like
@@ -163,6 +192,24 @@ export default function ZX9Speaker() {
         {/* Product Suggestions */}
         <div className="flex flex-col md:flex-row md:justify-center md:gap-3 gap-12">
           {/* Product 1 */}
+          <div className="flex flex-col items-center">
+            <div className="relative rounded-lg overflow-hidden w-full md:w-[200px] lg:w-[300px] h-[300px] bg-[#F1F1F1] flex items-center justify-center">
+              <img
+                src="/zx7-speakers.png"
+                alt="Product 3"
+                className="w-[150px] h-auto object-contain"
+              />
+            </div>
+            <h3 className="uppercase font-bold text-xl my-6">ZX7 Speaker</h3>
+            <button
+              onClick={() => navigate("/speakers/ZX7Speaker")}
+              className="uppercase py-2 px-6 text-white bg-[#D87D4A] hover:bg-amber-400 transition"
+            >
+              See Product
+            </button>
+          </div>
+
+          {/* Product 2 */}
           <div className="flex flex-col items-center ">
             <div className="relative rounded-lg overflow-hidden w-full md:w-[200px] lg:w-[300px] h-[300px] bg-[#F1F1F1] flex items-center justify-center">
               <img
@@ -173,25 +220,7 @@ export default function ZX9Speaker() {
             </div>
             <h3 className="uppercase font-bold text-xl my-6">XX99 Mark I</h3>
             <button
-              onClick={() => navigate("/speakers/ZX7Speaker")}
-              className="uppercase py-2 px-6 text-white bg-[#D87D4A] hover:bg-amber-400 transition"
-            >
-              See Product
-            </button>
-          </div>
-
-          {/* Product 2 */}
-          <div className="flex flex-col items-center">
-            <div className="relative rounded-lg overflow-hidden w-full md:w-[200px] lg:w-[300px] h-[300px] bg-[#F1F1F1] flex items-center justify-center">
-              <img
-                src="/xx59-headphones.png"
-                alt="Product 2"
-                className="w-[150px] h-auto object-contain"
-              />
-            </div>
-            <h3 className="uppercase font-bold text-xl my-6">XX59</h3>
-            <button
-               onClick={() => navigate("/headphones/xx99-mark-i")}
+              onClick={() => navigate("/headphones/xx99-mark-i")}
               className="uppercase py-2 px-6 text-white bg-[#D87D4A] hover:bg-amber-400 transition"
             >
               See Product
@@ -202,14 +231,14 @@ export default function ZX9Speaker() {
           <div className="flex flex-col items-center">
             <div className="relative rounded-lg overflow-hidden w-full md:w-[200px] lg:w-[300px] h-[300px] bg-[#F1F1F1] flex items-center justify-center">
               <img
-                src="/speaker.png"
-                alt="Product 3"
+                src="/xx59-headphones.png"
+                alt="Product 2"
                 className="w-[150px] h-auto object-contain"
               />
             </div>
-            <h3 className="uppercase font-bold text-xl my-6">ZX9 Speaker</h3>
+            <h3 className="uppercase font-bold text-xl my-6">XX59</h3>
             <button
-             onClick={() => navigate("/headphones/XX59")} 
+              onClick={() => navigate("/headphones/xx99-mark-i")}
               className="uppercase py-2 px-6 text-white bg-[#D87D4A] hover:bg-amber-400 transition"
             >
               See Product
@@ -217,6 +246,10 @@ export default function ZX9Speaker() {
           </div>
         </div>
       </div>
+
+      <ShopArea className="mt-[11pc] mb-[8pc]" />
+
+      {/* Audio Gear Section */}
       <div className="mt-32 py-20 px-6 md:px-12 lg:px-24 rounded-lg">
         <div className="flex flex-col md:flex-row md:items-center md:gap-12">
           {/* Image - comes first on mobile, last on desktop */}

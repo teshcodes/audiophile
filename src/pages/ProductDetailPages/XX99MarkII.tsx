@@ -1,14 +1,39 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import ShopArea from "../../components/ShopArea";
+import { CartContext } from "../../context/CartContext";
+import { products } from "../../data/product";
 
 export default function XX99MarkII() {
   const [count, setCount] = useState(1);
   const navigate = useNavigate();
 
+  const cart = useContext(CartContext);
+  if (!cart) {
+    throw new Error("Please Add to cart");
+  }
+  const { dispatch } = cart;
+  const product = products.xx99MarkII;
+
+  const handleAddToCart = () => {
+    dispatch({
+      type: "ADD_ITEM",
+      payload: {
+        id: product.id,
+        name: product.name,
+        price: product.price,
+        image: "/xx9-mark-11.png",
+        quantity: count,
+      },
+    });  
+  };
+
   const increment = () => setCount(count + 1);
   const decrement = () => {
     if (count > 1) setCount(count - 1);
   };
+
+    
 
   return (
     <div className="w-full overflow-x-hidden my-10">
@@ -26,7 +51,7 @@ export default function XX99MarkII() {
         <div className="w-full md:w-1/2 flex justify-center rounded-lg overflow-hidden bg-[#F1F1F1] h-[400px] lg:ml-[2pc]">
           <img
             src="/xx9-mark-11.png"
-            alt="xx9 Mark II Headphones"
+            alt={product.name}
             className="w-[250px] h-auto object-contain"
           />
         </div>
@@ -37,14 +62,14 @@ export default function XX99MarkII() {
             New Product
           </h5>
           <h6 className="text-black uppercase text-4xl md:text-3xl mb-6 font-semibold">
-            XX99 Mark II Headphones
+            {product.name}
           </h6>
           <p className="opacity-50 mb-6 text-xl">
             The new XX99 Mark II headphones is the pinnacle of pristine audio.
             It redefines your premium headphone experience by reproducing the
             balanced depth and precision of studio-quality sound.
           </p>
-          <p className="font-bold text-2xl mb-6">$2,999</p>
+          <p className="font-bold text-2xl mb-6">${product.price}</p>
 
           {/* Counter + Add to Cart */}
           <div className="flex flex-row sm:flex-col lg:flex-row md:flex-row items-center sm:items-start lg:items-center gap-4">
@@ -66,7 +91,10 @@ export default function XX99MarkII() {
             </div>
 
             {/* Add to Cart */}
-            <button className="uppercase py-2 px-6 text-white bg-[#D87D4A] hover:bg-amber-400 transition">
+            <button
+               onClick={handleAddToCart}
+              className="uppercase py-2 px-6 text-white bg-[#D87D4A] hover:bg-amber-400 transition"
+            >
               Add to Cart
             </button>
           </div>
@@ -194,7 +222,7 @@ export default function XX99MarkII() {
             </div>
             <h3 className="uppercase font-bold text-xl my-6">XX59</h3>
             <button
-               onClick={() => navigate("/headphones/xx59")}
+              onClick={() => navigate("/headphones/xx59")}
               className="uppercase py-2 px-6 text-white bg-[#D87D4A] hover:bg-amber-400 transition"
             >
               See Product
@@ -212,7 +240,7 @@ export default function XX99MarkII() {
             </div>
             <h3 className="uppercase font-bold text-xl my-6">ZX9 Speaker</h3>
             <button
-            //  onClick={() => navigate("/speakers/zx9-speaker")} 
+              onClick={() => navigate("/speakers/zx9Speaker")}
               className="uppercase py-2 px-6 text-white bg-[#D87D4A] hover:bg-amber-400 transition"
             >
               See Product
@@ -220,6 +248,11 @@ export default function XX99MarkII() {
           </div>
         </div>
       </div>
+
+      {/* Shop Area Section */}
+      <ShopArea className="mt-[11pc] mb-[8pc]" />
+
+      {/* Audio Gear Section */}
       <div className="mt-32 py-20 px-6 md:px-12 lg:px-24 rounded-lg">
         <div className="flex flex-col md:flex-row md:items-center md:gap-12">
           {/* Image - comes first on mobile, last on desktop */}

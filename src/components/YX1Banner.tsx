@@ -1,4 +1,6 @@
- export default function YX1Banner() {
+import { Link } from "react-router-dom";
+
+export default function YX1Banner() {
   return (
     <section className="md:px-10 md:mt-[6pc] lg:mt-[6pc] mt-5 px-6 sm:px-10 lg:px-40">
       <div className="md:flex">
@@ -13,12 +15,18 @@
 
         {/* Text Side */}
         <div className="flex-1 flex flex-col justify-center bg-[#F1F1F1] rounded-[8px] px-8 py-16 text-center lg:text-left md:mt-0 mt-5">
-          <h2 className="md:text-3xl text-4xl font-semibold md:font-bold uppercase mb-6">
+          <h2 className="md:text-3xl text-4xl font-semibold md:font-bold uppercase mb-6 md:ml-[-5pc] lg:ml-[0px]">
             YX1 Earphones
           </h2>
-          <button className="ml-12 uppercase mt-4 md:ml-9 py-4 md:px-7 border border-black text-black hover:bg-black hover:text-white font-bold transition rounded md:w-[250px] w-[180px] lg:w-[170px] lg:text-white lg:bg-black lg:ml-[-3px]">
-            see product
-          </button>
+          <Link to="/earphones/YXI">
+            <button
+              className="uppercase mt-4 py-4 md:px-7 border border-black text-black 
+                     hover:bg-black hover:text-white font-bold transition rounded
+                      w-[180px] md:w-[250px] lg:w-[170px] mx-auto md:mx-0 lg:text-white lg:bg-black lg:ml-[-3px]"
+            >
+              see product
+            </button>
+          </Link>
         </div>
       </div>
     </section>

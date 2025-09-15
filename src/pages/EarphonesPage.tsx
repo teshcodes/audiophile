@@ -1,5 +1,6 @@
 import ShopArea from "../components/ShopArea";
 import AudioGear from "../components/AudioGear";
+import { Link } from "react-router-dom";
 
 export default function EarphonePage() {
   return (
@@ -30,10 +31,11 @@ export default function EarphonePage() {
             even in noisy environments with its active noise cancellation
             feature.
           </p>
-           
+           <Link to="/earphones/YXI">
             <button className="uppercase py-4 px-9 text-[#FFFFFF] bg-[#D87D4A] hover:bg-amber-400 transition">
               See Product
             </button>
+            </Link>
          
         </div>
       </div>

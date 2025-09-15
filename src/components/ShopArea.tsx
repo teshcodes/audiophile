@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 export default function ShopArea({ className = "" }: { className?: string }) {
   const categories = [
-    { name: "Headphones", image: "./headset.png", link: "/headphones" },
-    { name: "Speakers", image: "./speaker.png", link: "/speakers" },
-    { name: "Earphones", image: "./earphone.png", link: "/earphones" },
+    { name: "Headphones", image: "/headset.png", link: "/headphones" },
+    { name: "Speakers", image: "/speaker.png", link: "/speakers" },
+    { name: "Earphones", image: "/earphone.png", link: "/earphones" },
   ];
 
   return (

@@ -2,9 +2,9 @@ import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ShopArea from "../../components/ShopArea";
 import { CartContext } from "../../context/CartContext";
-import {products} from "../../data/product";
+import { products } from "../../data/product";
 
-export default function XX99MarkII() {
+export default function YXI() {
   const [count, setCount] = useState(1);
   const navigate = useNavigate();
 
@@ -18,7 +18,7 @@ export default function XX99MarkII() {
     throw new Error("Please Add to cart");
   }
   const { dispatch } = cart;
-  const product = products.zx7
+  const product = products.yxi;
 
   const handleAddToCart = () => {
     dispatch({
@@ -27,7 +27,7 @@ export default function XX99MarkII() {
         id: product.id,
         name: product.name,
         price: product.price,
-        image: "/zx7-speakers.png",
+        image: "/earphone.png",
         quantity: count,
       },
     });  
@@ -48,8 +48,8 @@ export default function XX99MarkII() {
         {/* Image Section */}
         <div className="w-full md:w-1/2 flex justify-center rounded-lg overflow-hidden bg-[#F1F1F1] h-[400px] lg:ml-[2pc]">
           <img
-            src="/zx7-speakers.png"
-            alt="{product.name}"
+            src="/earphone.png"
+            alt={product.name}
             className="w-[250px] h-auto object-contain"
           />
         </div>
@@ -60,9 +60,10 @@ export default function XX99MarkII() {
             {product.name}
           </h6>
           <p className="opacity-50 mb-6 text-xl">
-            Stream high quality sound wirelessly with minimal to no loss. The
-            ZX7 speaker uses high-end audiophile components that represents the
-            top of the line powered speakers for home or studio use.
+            Tailor your listening experience with bespoke dynamic drivers from
+            the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound
+            even in noisy environments with its active noise cancellation
+            feature.
           </p>
           <p className="font-bold text-2xl mb-6">${product.price}</p>
 
@@ -102,20 +103,21 @@ export default function XX99MarkII() {
         <div className="md:w-2/3">
           <h2 className="uppercase font-bold text-2xl mb-6">Features</h2>
           <p className="opacity-70 mb-4">
-            Reap the advantages of a flat diaphragm tweeter cone. This provides
-            a fast response rate and excellent high frequencies that lower
-            tiered bookshelf speakers cannot provide. The woofers are made from
-            aluminum that produces a unique and clear sound. XLR inputs allow
-            you to connect to a mixer for more advanced usage.
+            Experience unrivalled stereo sound thanks to innovative acoustic
+            technology. With improved ergonomics designed for full day wearing,
+            these revolutionary earphones have been finely crafted to provide
+            you with the perfect fit, delivering complete comfort all day long
+            while enjoying exceptional noise isolation and truly immersive
+            sound.
           </p>
           <p className="opacity-70">
-            The ZX7 speaker is the perfect blend of stylish design and high
-            performance. It houses an encased MDF wooden enclosure which
-            minimises acoustic resonance. Dual connectivity allows pairing
-            through bluetooth or traditional optical and RCA input. Switch input
-            sources and control volume at your finger tips with the included
-            wireless remote. This versatile speaker is equipped to deliver an
-            authentic listening experience.
+            The YX1 Wireless Earphones features customizable controls for
+            volume, music, calls, and voice assistants built into both earbuds.
+            The new 7-hour battery life can be extended up to 28 hours with the
+            charging case, giving you uninterrupted play time. Exquisite
+            craftsmanship with a splash resistant design now available in an all
+            new white and grey color scheme as well as the popular classic
+            black.
           </p>
         </div>
 
@@ -125,11 +127,11 @@ export default function XX99MarkII() {
           <ul className="space-y-2">
             <li>
               <span className="text-[#D87D4A] font-bold mr-4">1x</span>
-              Speaker Unit
+              Earphone Unit
             </li>
             <li>
               <span className="text-[#D87D4A] font-bold mr-4">2x</span>
-              Speaker Cloth Panel
+              Multi-size Earplugs
             </li>
             <li>
               <span className="text-[#D87D4A] font-bold mr-4">1x</span>
@@ -137,11 +139,11 @@ export default function XX99MarkII() {
             </li>
             <li>
               <span className="text-[#D87D4A] font-bold mr-4">1x</span>
-              3.5mm 10m Audio Cable
+              USB-C Charging Cable
             </li>
             <li>
               <span className="text-[#D87D4A] font-bold mr-4">1x</span>
-              7.5m Optical Cable
+              Travel Pouch
             </li>
           </ul>
         </div>
@@ -151,8 +153,8 @@ export default function XX99MarkII() {
         <div className="grid gap-6">
           <div className="relative rounded-lg overflow-hidden">
             <img
-              src="/productdetail-13.png"
-              alt="Gallery 13"
+              src="/productdetail-16.png"
+              alt="Gallery 16"
               className="w-full h-full object-cover"
             />
 
@@ -161,8 +163,8 @@ export default function XX99MarkII() {
 
           <div className="relative rounded-lg overflow-hidden">
             <img
-              src="/productdetail-14.png"
-              alt="Gallery 14"
+              src="/productdetail-17.png"
+              alt="Gallery 17"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-black/50"></div>
@@ -171,8 +173,8 @@ export default function XX99MarkII() {
 
         <div className="relative rounded-lg overflow-hidden">
           <img
-            src="/productdetail-15.png"
-            alt="Gallery 15"
+            src="/productdetail-18.png"
+            alt="Gallery 18"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black/50"></div>
@@ -188,24 +190,6 @@ export default function XX99MarkII() {
         {/* Product Suggestions */}
         <div className="flex flex-col md:flex-row md:justify-center md:gap-3 gap-12">
           {/* Product 1 */}
-          <div className="flex flex-col items-center ">
-            <div className="relative rounded-lg overflow-hidden w-full md:w-[200px] lg:w-[300px] h-[300px] bg-[#F1F1F1] flex items-center justify-center">
-              <img
-                src="/zx9-desktop.png"
-                alt="ZX9 Speaker"
-                className="w-[150px] h-auto object-contain"
-              />
-            </div>
-            <h3 className="uppercase font-bold text-xl my-6">ZX9 Speaker</h3>
-            <button
-              onClick={() => navigate("/speakers/ZX9Speaker")}
-              className="uppercase py-2 px-6 text-white bg-[#D87D4A] hover:bg-amber-400 transition"
-            >
-              See Product
-            </button>
-          </div>
-
-          {/* Product 2 */}
           <div className="flex flex-col items-center">
             <div className="relative rounded-lg overflow-hidden w-full md:w-[200px] lg:w-[300px] h-[300px] bg-[#F1F1F1] flex items-center justify-center">
               <img
@@ -223,7 +207,7 @@ export default function XX99MarkII() {
             </button>
           </div>
 
-          {/* Product 3 */}
+          {/* Product 2 */}
           <div className="flex flex-col items-center">
             <div className="relative rounded-lg overflow-hidden w-full md:w-[200px] lg:w-[300px] h-[300px] bg-[#F1F1F1] flex items-center justify-center">
               <img
@@ -235,6 +219,24 @@ export default function XX99MarkII() {
             <h3 className="uppercase font-bold text-xl my-6">xx59</h3>
             <button
               onClick={() => navigate("/headphones/XX59")}
+              className="uppercase py-2 px-6 text-white bg-[#D87D4A] hover:bg-amber-400 transition"
+            >
+              See Product
+            </button>
+          </div>
+
+          {/* Product 3 */}
+          <div className="flex flex-col items-center ">
+            <div className="relative rounded-lg overflow-hidden w-full md:w-[200px] lg:w-[300px] h-[300px] bg-[#F1F1F1] flex items-center justify-center">
+              <img
+                src="/zx9-desktop.png"
+                alt="ZX9 Speaker"
+                className="w-[150px] h-auto object-contain"
+              />
+            </div>
+            <h3 className="uppercase font-bold text-xl my-6">ZX9 Speaker</h3>
+            <button
+              onClick={() => navigate("/speakers/ZX9Speaker")}
               className="uppercase py-2 px-6 text-white bg-[#D87D4A] hover:bg-amber-400 transition"
             >
               See Product
