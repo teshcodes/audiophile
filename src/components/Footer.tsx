@@ -15,7 +15,7 @@ export default function Footer() {
           className="
             flex flex-col items-center gap-4
             sm:flex-row sm:gap-8 sm:justify-start
-            uppercase text-sm tracking-[2px]
+            uppercase text-sm tracking-[2px] pointer
           "
         >
           <Link to="/" className="hover:text-amber-500">
@@ -65,21 +65,21 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Facebook className="w-10 h-10 text-white hover:text-amber-500 transition" />
+            <Facebook className="pointer w-10 h-10 text-white hover:text-amber-500 transition" />
           </a>
           <a
             href="https://twitter.com"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Twitter className="w-10 h-10 text-white hover:text-amber-500 transition" />
+            <Twitter className="pointer w-10 h-10 text-white hover:text-amber-500 transition" />
           </a>
           <a
             href="https://instagram.com"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Instagram className="w-10 h-10 text-white hover:text-amber-500 transition" />
+            <Instagram className="pointer w-10 h-10 text-white hover:text-amber-500 transition" />
           </a>
         </div>
       </div>

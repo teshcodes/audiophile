@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { CartContext } from "../context/CartContext";
 import { ShoppingCart } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function CartButton() {
   const [open, setOpen] = useState(false);
@@ -96,7 +97,7 @@ export default function CartButton() {
                   <div className="flex items-center bg-gray-100 px-3 py-1">
                     <button
                       onClick={() => decrement(item.id)}
-                      className="px-2 text-gray-600 hover:text-[#D87D4A]"
+                      className="pointer px-2 text-gray-600 hover:text-[#D87D4A]"
                     >
                       -
                     </button>
@@ -105,7 +106,7 @@ export default function CartButton() {
                     </span>
                     <button
                       onClick={() => increment(item.id)}
-                      className="px-2 text-gray-600 hover:text-[#D87D4A]"
+                      className="pointer px-2 text-gray-600 hover:text-[#D87D4A]"
                     >
                       +
                     </button>
@@ -126,9 +127,11 @@ export default function CartButton() {
               </div>
 
               {/* Checkout Button */}
-              <button className="mt-6 w-full bg-[#D87D4A] text-white py-3 rounded hover:bg-amber-400 transition">
+              <Link to="/checkout">
+              <button className="pointer mt-6 w-full bg-[#D87D4A] text-white py-3 rounded hover:bg-amber-400 transition">
                 Checkout
               </button>
+                </Link>
             </>
           )}
         </div>

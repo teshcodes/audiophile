@@ -31,7 +31,7 @@ export default function SpeakerPage() {
             pleasing and practical audio setups.
           </p>
            <Link to="/speakers/ZX9Speaker">
-          <button className="uppercase py-4 px-9 text-[#FFFFFF] bg-[#D87D4A] hover:bg-amber-400 transition">
+          <button className="pointer uppercase py-4 px-9 text-[#FFFFFF] bg-[#D87D4A] hover:bg-amber-400 transition">
             See Product
           </button>
           </Link>
@@ -56,7 +56,7 @@ export default function SpeakerPage() {
             components that represents the top of the line powered speakers for home or studio use.
           </p>
           <Link to="/speakers/ZX7Speaker">
-          <button className="uppercase py-4 px-9 text-[#FFFFFF] bg-[#D87D4A] hover:bg-amber-400 transition">
+          <button className="pointer uppercase py-4 px-9 text-[#FFFFFF] bg-[#D87D4A] hover:bg-amber-400 transition">
             See Product
           </button>
           </Link>

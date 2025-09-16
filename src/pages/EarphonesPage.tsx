@@ -32,7 +32,7 @@ export default function EarphonePage() {
             feature.
           </p>
            <Link to="/earphones/YXI">
-            <button className="uppercase py-4 px-9 text-[#FFFFFF] bg-[#D87D4A] hover:bg-amber-400 transition">
+            <button className="pointer uppercase py-4 px-9 text-[#FFFFFF] bg-[#D87D4A] hover:bg-amber-400 transition">
               See Product
             </button>
             </Link>

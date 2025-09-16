@@ -35,7 +35,7 @@ export default function ShopArea({ className = "" }: { className?: string }) {
               className="flex items-center gap-2 text-gray-500 mt-3 uppercase tracking-wider hover:text-orange-500 transition"
             >
               Shop
-              <ChevronRight className="w-5 h-5 text-orange-500" />
+              <ChevronRight className="pointer w-5 h-5 text-orange-500" />
             </Link>
           </div>
         ))}

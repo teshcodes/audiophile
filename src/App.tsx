@@ -18,6 +18,7 @@ import ZX7Speaker from "./pages/ProductDetailPages/ZX7Speaker";
 import YXI from "./pages/ProductDetailPages/YXI";
 
 import CartPage from "./pages/CartPage";
+import CheckoutPage from "./pages/CheckoutPage";
 
 export default function App() {
   return (
@@ -41,6 +42,7 @@ export default function App() {
             <Route path="/earphones/YXI" element={<YXI />} />
 
             <Route path="/cart" element={<CartPage />} />
+            <Route path="/checkout" element={<CheckoutPage />} /> 
           </Route>
         </Routes>
       </CartProvider>

@@ -20,7 +20,7 @@ export default function ZX7Banner() {
           </h2>
           <Link to="/speakers/ZX7Speaker">
             <button
-              className="uppercase mt-4 py-4 md:px-7 border border-black text-black 
+              className="pointer uppercase mt-4 py-4 md:px-7 border border-black text-black 
               hover:bg-black hover:text-white font-bold transition rounded
                 w-[180px] md:w-[250px] lg:w-[170px] mx-auto md:mx-0               
               lg:text-white lg:bg-black lg:ml-[-3px]"

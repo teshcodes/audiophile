@@ -14,12 +14,18 @@ export default function CartPage() {
   const { state, dispatch } = cart;
   const { items } = state;
 
-  const total = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  const total = items.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0
+  );
 
   // Close on outside click
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
-      if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
+      if (
+        modalRef.current &&
+        !modalRef.current.contains(event.target as Node)
+      ) {
         navigate(-1); // go back when clicking outside
       }
     }
@@ -63,7 +69,7 @@ export default function CartPage() {
                   onClick={() =>
                     dispatch({ type: "REMOVE_ITEM", payload: { id: item.id } })
                   }
-                  className="text-red-500 hover:text-red-700 font-medium"
+                  className="pointer text-red-500 hover:text-red-700 font-medium"
                 >
                   Remove
                 </button>
@@ -80,13 +86,13 @@ export default function CartPage() {
             <div className="flex gap-4 mt-6">
               <button
                 onClick={() => dispatch({ type: "CLEAR_CART" })}
-                className="bg-gray-200 hover:bg-gray-300 text-black py-2 px-4 rounded"
+                className="pointer bg-gray-200 hover:bg-gray-300 text-black py-2 px-4 rounded"
               >
                 Clear Cart
               </button>
-              <button className="bg-[#D87D4A] hover:bg-amber-400 text-white py-2 px-4 rounded">
-                Checkout
-              </button>
+                <button className="pointer bg-[#D87D4A] hover:bg-amber-400 text-white py-2 px-4 rounded">
+                  Checkout
+                </button>
             </div>
           </div>
         )}

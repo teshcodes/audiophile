@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function ShopBanner() {
   return (
-    <section className=" md:mt-20 mt-8 px-6 sm:pl-11 sm:pr-9 lg:px-40">
+    <section className="md:mt-20 mt-8 px-6 sm:pl-11 sm:pr-9 lg:px-40">
       <div
         className="relative w-full lg:max-w-[1200px] lg:h-[400px] h-[720px] mx-auto rounded-[8px] 
                    bg-[#D87D4A] flex flex-col lg:flex-row items-center lg:items-center 
@@ -44,7 +44,7 @@ export default function ShopBanner() {
 
           {/* Button */}
           <Link to="/speakers/ZX9Speaker">
-          <button className="uppercase lg:mt-[-1pc] mt-1 md:mt-6 py-3 px-10 text-white/70 bg-black hover:bg-gray-800 transition rounded">
+          <button className="pointer uppercase lg:mt-[-1pc] mt-1 md:mt-6 py-3 px-10 text-white/70 bg-black hover:bg-gray-800 transition rounded">
             See Product
           </button>
           </Link>

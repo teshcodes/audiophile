@@ -9,11 +9,11 @@ export default function Header() {
 
   return (
     <header className="flex bg-black text-white px-4 sm:px-8 py-4 sm:py-6 justify-between items-center relative">
-      {/* Left side */}
+  
       <div className="flex items-center gap-4 sm:gap-10">
         {/* Menu button - mobile + tablet only */}
         <button
-          className="lg:hidden z-20"
+          className=" pointer lg:hidden z-20"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           {menuOpen ? <X size={22} /> : <Menu size={22} />}
@@ -25,7 +25,7 @@ export default function Header() {
         </h1>
 
         {/* Desktop Nav (lg+) */}
-        <nav className="hidden lg:flex gap-8 uppercase text-sm tracking-[2px] ml-12">
+        <nav className="pointer hidden lg:flex gap-8 uppercase text-sm tracking-[2px] ml-12">
           <Link to="/" className="hover:text-amber-500">Home</Link>
           <Link to="/headphones" className="hover:text-amber-500">Headphones</Link>
           <Link to="/speakers" className="hover:text-amber-500">Speakers</Link>

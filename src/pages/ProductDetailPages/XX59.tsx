@@ -41,7 +41,7 @@ export default function XX59() {
       <div className="md:max-w-[1200px] md:mx-auto px-6 mb-8">
         <button
           onClick={() => navigate(-1)}
-          className="text-gray-400 hover:text-[#D87D4A] transition font-medium"
+          className="pointer text-gray-400 hover:text-[#D87D4A] transition font-medium"
         >
           ← Go Back
         </button>
@@ -79,14 +79,14 @@ export default function XX59() {
             <div className="flex items-center justify-between bg-[#F1F1F1] w-[120px] px-4 py-2">
               <button
                 onClick={decrement}
-                className="text-black opacity-60 hover:text-[#D87D4A] font-bold"
+                className="pointer text-black opacity-60 hover:text-[#D87D4A] font-bold"
               >
                 -
               </button>
               <span className="font-semibold">{count}</span>
               <button
                 onClick={increment}
-                className="text-black opacity-60 hover:text-[#D87D4A] font-bold"
+                className="pointer text-black opacity-60 hover:text-[#D87D4A] font-bold"
               >
                 +
               </button>
@@ -95,7 +95,7 @@ export default function XX59() {
             {/* Add to Cart */}
             <button
               onClick= {handleAddToCart}
-              className="uppercase py-2 px-6 text-white bg-[#D87D4A] hover:bg-amber-400 transition"
+              className="pointer uppercase py-2 px-6 text-white bg-[#D87D4A] hover:bg-amber-400 transition"
             >
               Add to Cart
             </button>
@@ -201,7 +201,7 @@ export default function XX59() {
             <h3 className="uppercase font-bold text-xl my-6">XX99 Mark II</h3>
             <button
               onClick={() => navigate("/headphones/xx99-mark-ii")}
-              className="uppercase py-2 px-6 text-white bg-[#D87D4A] hover:bg-amber-400 transition"
+              className="pointer uppercase py-2 px-6 text-white bg-[#D87D4A] hover:bg-amber-400 transition"
             >
               See Product
             </button>
@@ -219,7 +219,7 @@ export default function XX59() {
             <h3 className="uppercase font-bold text-xl my-6">XX99 mark i</h3>
             <button
               onClick={() => navigate("/headphones/xx99-mark-i")}
-              className="uppercase py-2 px-6 text-white bg-[#D87D4A] hover:bg-amber-400 transition"
+              className="pointer uppercase py-2 px-6 text-white bg-[#D87D4A] hover:bg-amber-400 transition"
             >
               See Product
             </button>
@@ -237,7 +237,7 @@ export default function XX59() {
             <h3 className="uppercase font-bold text-xl my-6">ZX9 Speaker</h3>
             <button 
             onClick={() => navigate("/speakers/zx9Speaker")}
-            className="uppercase py-2 px-6 text-white bg-[#D87D4A] hover:bg-amber-400 transition">
+            className="pointer uppercase py-2 px-6 text-white bg-[#D87D4A] hover:bg-amber-400 transition">
               See Product
             </button>
           </div>

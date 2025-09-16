@@ -30,7 +30,7 @@ export default function SecondHeader() {
           </p>
 
           {/* Button */}
-          <button className="uppercase py-2 px-6 sm:py-4 sm:px-8 text-sm sm:text-base font-semibold text-white bg-amber-600 hover:bg-amber-400 transition">
+          <button className="pointer uppercase py-2 px-6 sm:py-4 sm:px-8 text-sm sm:text-base font-semibold text-white bg-amber-600 hover:bg-amber-400 transition">
             See Product
           </button>
         </div>
@@ -51,7 +51,7 @@ export default function SecondHeader() {
             Experience natural, lifelike audio and exceptional build quality
             made for the passionate music enthusiast.
           </p>
-          <button className="uppercase py-4 px-8 font-semibold text-white bg-amber-600 hover:bg-amber-400 transition">
+          <button className="pointer uppercase py-4 px-8 font-semibold text-white bg-amber-600 hover:bg-amber-400 transition">
             See Product
           </button>
         </div>

@@ -31,7 +31,7 @@ export default function HeadphonePage() {
             balanced depth and precision of studio-quality sound.
           </p>
           <Link to="/headphones/xx99-mark-ii">
-            <button className="uppercase py-4 px-9 text-[#FFFFFF] bg-[#D87D4A] hover:bg-amber-400 transition">
+            <button className="pointer uppercase py-4 px-9 text-[#FFFFFF] bg-[#D87D4A] hover:bg-amber-400 transition">
               See Product
             </button>
           </Link>
@@ -58,7 +58,7 @@ export default function HeadphonePage() {
           </p>
           .
           <Link to="/headphones/xx99-mark-i">
-            <button className="uppercase py-4 px-9 text-[#FFFFFF] bg-[#D87D4A] hover:bg-amber-400 transition">
+            <button className="pointer uppercase py-4 px-9 text-[#FFFFFF] bg-[#D87D4A] hover:bg-amber-400 transition">
               See Product
             </button>
           </Link>
@@ -84,7 +84,7 @@ export default function HeadphonePage() {
             wireless headset is a brilliant companion at home or on the move.
           </p>
           <Link to="/headphones/xx59">
-            <button className="uppercase py-4 px-9 text-[#FFFFFF] bg-[#D87D4A] hover:bg-amber-400 transition">
+            <button className="pointer uppercase py-4 px-9 text-[#FFFFFF] bg-[#D87D4A] hover:bg-amber-400 transition">
               See Product
             </button>
           </Link>
