@@ -1,6 +1,6 @@
 export default function SecondHeader() {
   return (
-    <div className="relative w-full">
+    <div className="relative w-full z-10">
       {/* Mobile & Tablet version (overlay text on image) */}
       <div className="lg:hidden relative">
         {/* Background Image */}
@@ -37,7 +37,7 @@ export default function SecondHeader() {
       </div>
 
       {/* Desktop version (text + image side by side) */}
-      <div className="hidden lg:flex items-center justify-between px-20 bg-black h-[700px] rounded-md overflow-hidden">
+      <div className="hidden lg:flex items-center justify-between px-20 bg-black h-[700px] rounded-b-md overflow-hidden">
         {/* Text Block */}
         <div className="max-w-lg text-left">
           <h5 className="text-gray-400 text-sm uppercase tracking-[12px] mb-4">
